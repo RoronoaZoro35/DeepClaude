@@ -26,6 +26,22 @@
             "is_origin_reasoning": true,
             "is_valid": true,
             "proxy_open": false
+        },
+        "Silicon/DeeSeek-R1": {
+            "model_id": "deepseek-ai/DeepSeek-R1",
+            "api_key": "sk-gwmmouvefrahbiotizqmnxjdtikkzoumotlovkeodxrbdqzf",
+            "api_base_url": "https://api.siliconflow.cn",
+            "api_request_address": "v1/chat/completions",
+            "is_origin_reasoning": true,
+            "is_valid": true
+        },
+        "Ali/DeepSeek-R1": {
+            "model_id": "deepseek-r1",
+            "api_key": "sk-6e72a971c173476e8751fb10e48844da",
+            "api_base_url": "https://dashscope.aliyuncs.com/compatible-mode",
+            "api_request_address": "v1/chat/completions",
+            "is_origin_reasoning": true,
+            "is_valid": true
         }
     },
     "target_models": {
@@ -56,7 +72,7 @@
             "is_valid": true,
             "proxy_open": false
         },
-        "Gemini/Gemini-2.5-Flash": {
+        "Gemini/Gemini-2.5-Flash-Official": {
             "model_id": "gemini-2.5-flash-preview-04-17",
             "api_key": "***********",
             "api_base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
@@ -65,14 +81,37 @@
             "is_valid": true,
             "proxy_open": true
         },
-        "Gemini/Gemini-2.5-Pro": {
-            "model_id": "gemini-2.5-pro-preview-05-06",
-            "api_key": "***********",
-            "api_base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
-            "api_request_address": "chat/completions",
+        "Gemini/Gemini-2.0-Pro": {
+            "model_id": "gemini-2.5-pro-exp-03-25",
+            "api_key": "sk-eqTM3YDYAAGx2fRCLpAZ4Xholws6m0rW5O7MdZlmitW093wS",
+            "api_base_url": "https://darthvader-133-vaderodyseus5.hf.space",
+            "api_request_address": "",
             "model_format": "openai",
-            "is_valid": true,
-            "proxy_open": true
+            "is_valid": true
+        },
+        "Xmini/Claude-3-7-Sonnet": {
+            "model_id": "claude-3-7-sonnet-20250219",
+            "api_key": "sk-TriCNJIP860ETxp56rHuDqcB1rqIWQoislHUQ5PnXGJdMJmE",
+            "api_base_url": "https://chat.xiaohuapi.site",
+            "api_request_address": "v1/chat/completions",
+            "model_format": "openai",
+            "is_valid": true
+        },
+        "Gemini/Gemini-2.5-Pro": {
+            "model_id": "gemini-2.5-pro-exp-03-25",
+            "api_key": "sk-36FfPBjOoRyaTrKUTf0lNyiKEfoEPWMP4leX2CheJZQNNERr",
+            "api_base_url": "https://xiaohumini.site",
+            "api_request_address": "v1/chat/completions",
+            "model_format": "openai",
+            "is_valid": true
+        },
+        "Gemini/Gemini-2.5-Flash-Thinking": {
+            "model_id": "gemini-2.5-flash-preview-04-17-thinking",
+            "api_key": "sk-eqTM3YDYAAGx2fRCLpAZ4Xholws6m0rW5O7MdZlmitW093wS",
+            "api_base_url": "https://darthvader-133-vaderodyseus5.hf.space",
+            "api_request_address": "v1/chat/completions",
+            "model_format": "openai",
+            "is_valid": true
         }
     },
     "proxy": {
@@ -85,26 +124,26 @@
         ],
         "log_level": "INFO",
         "api_key": "123456",
-        "save_deepseek_tokens":false,
+        "save_deepseek_tokens": false,
         "save_deepseek_tokens_max_tokens": 5
     },
     "composite_models": {
         "deepclaude": {
             "model_id": "deepclaude",
-            "reasoner_models": "PPIO/DeepSeek-R1-0528",
-            "target_models": "DMXapi/Claude-3-7-Sonnet",
+            "reasoner_models": "Ali/DeepSeek-R1",
+            "target_models": "Xmini/Claude-3-7-Sonnet",
             "is_valid": true
         },
         "deepgeminiflash": {
             "model_id": "deepgeminiflash",
-            "reasoner_models": "PPIO/DeepSeek-R1-0528",
-            "target_models": "Gemini/Gemini-2.0-Flash",
+            "reasoner_models": "Ali/DeepSeek-R1",
+            "target_models": "Gemini/Gemini-2.5-Flash",
             "is_valid": true
         },
         "deepgeminipro": {
             "model_id": "deepgeminipro",
-            "reasoner_models": "PPIO/DeepSeek-R1-0528",
-            "target_models": "Gemini/Gemini-2.0-Pro",
+            "reasoner_models": "Ali/DeepSeek-R1",
+            "target_models": "Gemini/Gemini-2.5-Pro",
             "is_valid": true
         }
     }
